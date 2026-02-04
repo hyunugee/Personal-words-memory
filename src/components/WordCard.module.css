@@ -1,0 +1,109 @@
+.card {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flipped .inner {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--radius);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: rgba(30, 41, 59, 0.9);
+    /* Darker for back */
+    text-align: left;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    overflow-y: auto;
+}
+
+.word {
+    font-size: 3rem;
+    background: linear-gradient(to right, #fff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.audioBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.audioBtn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.hint {
+    margin-top: auto;
+    opacity: 0.5;
+    font-size: 0.9rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h3 {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--foreground);
+}
+
+.section b {
+    color: var(--primary);
+    font-weight: 600;
+}
